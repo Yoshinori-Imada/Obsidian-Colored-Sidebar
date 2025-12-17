@@ -1,21 +1,7 @@
 # Obsidian-Colored-Sidebar (Japanese Customized Version)
 
-[Screenshot-sidebar.png]
-<table>
-  <tr>
-    <th width="50%">Light-mode</th>
-    <th width="50%">Dark-mode</th>
-  </tr>
-  <tr>
-    <td>
-       <img src="./Screenshot-light.png.png" width="100%" alt="Before Image">
-    </td>
-    <td>
-       <img src="./Screenshot-dark.png.png" width="100%" alt="After Image">
-    </td>
-  </tr>
-</table>
-
+<img src="./Screenshot-light.png" width="40%" alt="Before"> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src="./Screenshot-dark.png" width="40%" alt="Before">
 このリポジトリは、Obsidianのサイドバーにあるフォルダをカラフルに装飾するためのCSSスニペットです。
 
 Travis Abendshien氏の [Obsidian-Colored-Sidebar](https://github.com/original-repo-url) をベースに、日本語環境向けの調整と、コードの整理（リファクタリング）を行いました。

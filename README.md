@@ -84,6 +84,6 @@ Travis Abendshien氏の [Obsidian-Colored-Sidebar](https://github.com/original-r
 ```
 ---
 ## Credits / 謝辞
-* Forked from: [Obsidian-Colored-Sidebar](https://github.com/original-repo-url) by Travis Abendshien
+* Forked from: [Obsidian-Colored-Sidebar](https://github.com/CyanVoxel/Obsidian-Colored-Sidebar) by Travis Abendshien
 * Inspired by: "Coloured Folders" snippet by Lithou
-* Original License applies.
+* Original License applies.

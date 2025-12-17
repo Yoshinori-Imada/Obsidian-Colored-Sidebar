@@ -6,7 +6,7 @@
 
 このリポジトリは、Obsidianのサイドバーにあるフォルダをカラフルに装飾するためのCSSスニペットです。
 
-Travis Abendshien氏の [Obsidian-Colored-Sidebar](https://github.com/original-repo-url) をベースに、日本語環境向けの調整と、コードの整理（リファクタリング）を行いました。
+Travis Abendshien氏の [Obsidian-Colored-Sidebar](https://github.com/CyanVoxel/Obsidian-Colored-Sidebar) をベースに、日本語環境向けの調整と、コードの整理（リファクタリング）を行いました。
 
 ## 🚀 オリジナルからの変更点
 * **日本語対応:** 説明を日本語化しました。

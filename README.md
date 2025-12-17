@@ -3,6 +3,7 @@
 <img src="./Screenshot-light.png" width="40%" alt="Before"> &nbsp;&nbsp;&nbsp;&nbsp;
 <img src="./Screenshot-dark.png" width="40%" alt="Before">
 
+*（※ スクリーンショット内のアイコン表示には「Icon Folder」プラグインを使用しています。）*
 
 このリポジトリは、Obsidianのサイドバーにあるフォルダをカラフルに装飾するためのCSSスニペットです。
 

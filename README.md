@@ -1,35 +1,101 @@
-# Obsidian-Colored-Sidebar v2.0.0
-## A Colored Sidebar CSS Snippet for Obsidian.
+# Obsidian-Colored-Sidebar (Japanese Customized Version)
 
-### *Create a [colorfully cascading](https://youtu.be/rAkerV8rlow) Obsidian sidebar!*
+[Screenshot-sidebar.png]
+<table>
+  <tr>
+    <th width="50%">Light-mode</th>
+    <th width="50%">Dark-mode</th>
+  </tr>
+  <tr>
+    <td>
+       <img src="./Screenshot-light.png.png" width="100%" alt="Before Image">
+    </td>
+    <td>
+       <img src="./Screenshot-dark.png.png" width="100%" alt="After Image">
+    </td>
+  </tr>
+</table>
 
-![Example](./example.png)
-This snippet targets folders beginning with numbered prefixes, and applies full
-color formatting based on the root colors listed inside the snippet. The prefixes are both
-customizable and extensible; feel free to change, add, and remove them based on
-your own titles and vault structure! By default I have a range of 8+1 colors,
-however I've provided some other common colors as a starting point for your own
-customization. Just swap out the color variable names in the prefix groups.
+このリポジトリは、Obsidianのサイドバーにあるフォルダをカラフルに装飾するためのCSSスニペットです。
 
-## Installation
-To install the snippet, navigate to Settings -> Appearance inside of Obsidian and scroll down to the "CSS Snippets" section. From there, click the "Open Snippets Folder". Place the "Colored Sidebar Items.css" file from this repository inside this opened folder. Back in Obsidian, hit the "Reload Snippets" button and toggled on the "Colored Sidebar Items" snippet. Now that the snippet is loaded, refer to the [How It Works](#How-It-Works) section to get it fully working in your vault!
+Travis Abendshien氏の [Obsidian-Colored-Sidebar](https://github.com/original-repo-url) をベースに、日本語環境向けの調整と、コードの整理（リファクタリング）を行いました。
 
-## How It Works
-By default, the snippet targets folders beginning with numbered prefixes (00 though 07, + 99). These prefixes have assigned color values inside the CSS file, and when lined up together form a continuous gradient (with the exception of 99). *Make sure to prepend your folder names with these prefixes for the colors to work!*
+## 🚀 オリジナルからの変更点
+* **日本語対応:** 説明を日本語化しました。
+* **コードの最適化:** 内部構造をリファクタリングし、カスタマイズしやすくしました。
+* **[その他の変更点]:** (例：配色の変更、対象プレフィックスの変更などがあれば記載)
 
-### Customizing Colors
-To customize the colors, prefixes, and number of colors, you’ll need to open up the CSS snippet in the text editor of your choice. Under the `root`, you’ll see several color variables with their corresponding hexadecimal code values. To modify a color, just change out the hex value with your new color value. If you wish to add a new color to the list, just follow the pattern and add a new variable in this section.
+## 📦 インストール方法
+1. このリポジトリから `[あなたのCSSファイル名].css` をダウンロードします。
+2. Obsidianの `設定` -> `外観` -> `CSSスニペット` を開きます。
+3. フォルダアイコンをクリックしてスニペットフォルダを開き、ダウンロードしたファイルを入れます。
+4. Obsidian側で「再読み込み」を押し、スイッチをONにします。
 
-### Customizing Prefixes
-Further down in the CSS file, you’ll see the CSS class names targeting folders, named something like `.nav-folder-title[data-path^="00"]`. There are currently four of these classes that target **each** colored group, which you can quickly tell apart by the prefix they target (in this example, `"00"`). If you wish to change the prefixes to any other number, letter, or word, just replace the old numbers in quotations with your new values. If you'd like to select a folder in some way other than by a prefix, [this article](https://css-tricks.com/almanac/selectors/a/attribute/) shows how to modify the selector in additional ways.
+## 使い方 (How It Works)
+※以下はあなたのコードの仕様に合わせて書いてください
+デフォルトでは、フォルダ名の先頭に `00` ～ `12` の数字をつけると、自動的に色が付きます。
+例: `00_Inbox`, `01_Projects` ...
 
-### Adding Additional Folders
-If you wish to expand the list of colored folders, then just create a copy of one of the four groups of CSS classes that target the same prefix. Change this duplicated prefix and swap out any instance of a color variable (ex. `--cool-gray`) with your desired color variable. These variables are peppered into these classes all around, and if you accidentally miss one then you'll see the old color show up in parts of this new folder theme, so make sure to double check!
+## カスタマイズ方法
+`[あなたのCSSファイル名].css` をテキストエディタで開き、以下の変数を変更することで好みの色にできます。
+### 1. 色を変更する
+ファイルの冒頭にある `:root` セクションを探してください。ここに色の設定（変数の定義）がまとまっています。
+`#` で始まるカラーコード（例: `#ff0000`）を書き換えることで、好きな色に変更できます。
 
-You may have noticed that I’ve included several built-in color variables that are not used by default - these are from my own personal matching palette that you’re free to try out to expand your colored sidebar with!
+```css
+/* 設定例 */
+:root {
+  /* ================================ Colors ================================ */
+  ...省略 
+  --soft-blue: #aec6ff;          /* Default Prefix: 00 */
+  --pale-pink: #ffd8ee;          /* Default Prefix: 01 */
+  --purple: #c952ed;             /* Default Prefix: 02 */
+  --mint: #52eea3;               /* Default Prefix: 03 */
+  --violet: #9446f8;             /* Default Prefix: 04 */
+  --orange: #ee6748;             /* Default Prefix: 05 */
+  --blue: #437cf3;               /* Default Prefix: 06 */
+  ...省略
+```
 
+### 2. 対象のフォルダ名（プレフィックス）を変更する
+
+デフォルトでは 00 や 01 などの数字に反応しますが、これを main や log などの単語に変えることも可能です。
+ファイル内で data-path^="00" のように書かれている箇所を検索し、" " の中身を任意の文字に書き換えてください。
+#### 変更前: "00" で始まるフォルダに適用 
+
+`.nav-folder-title[data-path^="00"] ...`
+
+#### 変更後: "project" で始まるフォルダに適用する場合
+
+`.nav-folder-title[data-path^="project"] ...`
+
+### 3.  ⚠️ フォルダ（プレフィックス）を追加する際の注意点
+
+新しいフォルダ番号（例: `13` や `project` など）を追加する場合は、色の定義だけでなく、**「Generic Prefix Styles」セクションへの追記も必須です。**
+
+前半で色（変数）を定義しただけでは、Obsidian側はその色をどう表示していいか分からないので、
+後半にある `Generic Prefix Styles` 内のリストにも同じプレフィックスを追加することで、初めて色が適用されます。
+
+**手順:**
+1. ファイル前半で色変数を定義する。
+2. ファイル後半の `Generic Prefix Styles` にある**全てのリスト（カンマ区切りの箇所）**に、新しいプレフィックスの行を追加する。
+```css
+
+
+   /* --------------------------- Generic Prefix Styles -------------------------- */
+   .nav-folder-title[data-path^="11"],
+   .nav-folder-title[data-path^="12"],
+   /* ここに新しい行を追加します（例: 13番を追加する場合） */
+   .nav-folder-title[data-path^="13"],
+
+    /* ⚠️ 注意:
+    * このファイル内には同様のリスト定義が下に続きます。
+    * 必ず【合計4箇所】すべてに同じ行を追加してください。
+    * 1箇所でも忘れると、ホバー時の挙動やアイコンの色が正しく反映されません。
+      */
+```
 ---
-
-Goes great with the [Iconize](https://github.com/FlorianWoelki/obsidian-iconize) plugin!
-
-*Inspired by the "Coloured Folders" snippet by Lithou.*
+## Credits / 謝辞
+* Forked from: [Obsidian-Colored-Sidebar](https://github.com/original-repo-url) by Travis Abendshien
+* Inspired by: "Coloured Folders" snippet by Lithou
+* Original License applies.
